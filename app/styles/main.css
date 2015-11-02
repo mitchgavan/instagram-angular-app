@@ -77,3 +77,24 @@ body {
     border-bottom: 0;
   }
 }
+
+/* Animation */
+.animate.ng-move,
+.animate.ng-enter,
+.animate.ng-leave,
+.animate.ng-hide {
+  transition:all linear 0.5s;
+}
+
+.animate.ng-leave.ng-leave-active,
+.animate.ng-move,
+.animate.ng-enter,
+.animate.ng-hide {
+  opacity:0;
+}
+
+.animate.ng-leave,
+.animate.ng-move.ng-move-active,
+.animate.ng-enter.ng-enter-active {
+  opacity:1;
+}

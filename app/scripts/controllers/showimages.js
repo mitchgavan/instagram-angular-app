@@ -10,7 +10,9 @@
 angular.module('instaApp')
   .controller('ShowImagesCtrl', function ($scope, InstagramAPI) {
     $scope.data = {};
+    $scope.dataLoaded = false;
     InstagramAPI.fetchPopular(function(data){
       $scope.pics = data;
+      $scope.dataLoaded = true;
     });
   });
