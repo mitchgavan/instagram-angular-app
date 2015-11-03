@@ -82,19 +82,71 @@ body {
 .animate.ng-move,
 .animate.ng-enter,
 .animate.ng-leave,
-.animate.ng-hide {
+.animate.ng-hide,
+.animate {
   transition:all linear 0.5s;
 }
 
 .animate.ng-leave.ng-leave-active,
 .animate.ng-move,
 .animate.ng-enter,
-.animate.ng-hide {
+.animate.ng-hide-add {
   opacity:0;
 }
 
 .animate.ng-leave,
 .animate.ng-move.ng-move-active,
-.animate.ng-enter.ng-enter-active {
+.animate.ng-enter.ng-enter-active,
+.animate.ng-hide-remove {
   opacity:1;
+}
+
+/* Preloader */
+.loader,
+.loader:before,
+.loader:after {
+  border-radius: 50%;
+}
+.loader:before,
+.loader:after {
+  position: absolute;
+  content: '';
+}
+.loader:before {
+  width: 2.6em;
+  height: 5.1em;
+  background: #fff;
+  border-radius: 5.1em 0 0 5.1em;
+  top: -0.1em;
+  left: -0.1em;
+  transform-origin: 2.6em 2.55em;
+  animation: load2 2s infinite ease 1.5s;
+}
+.loader {
+  font-size: 11px;
+  text-indent: -99999em;
+  margin: 55px auto;
+  position: relative;
+  width: 5em;
+  height: 5em;
+  box-shadow: inset 0 0 0 0.5em #ccc;
+  transform: translateZ(0);
+}
+.loader:after {
+  width: 2.6em;
+  height: 5.1em;
+  background: #fff;
+  border-radius: 0 5.1em 5.1em 0;
+  top: -0.1em;
+  left: 2.55em;
+  transform-origin: 0px 2.55em;
+  animation: load2 2s infinite ease;
+}
+@keyframes load2 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }

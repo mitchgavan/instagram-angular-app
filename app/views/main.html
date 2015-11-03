@@ -3,9 +3,7 @@
 <div class="row">
   <section ng-controller="ShowImagesCtrl as images">
 
-    <div ng-hide="dataLoaded" class="preloader animate">
-        preloader
-    </div>
+    <div ng-hide="dataLoaded" class="loader animate">Loading...</div>
 
     <div class="col-lg-4 animate" ng-repeat="p in pics">
       
