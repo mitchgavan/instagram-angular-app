@@ -7,23 +7,26 @@
  * # instagramAPI
  * Factory in the instaApp.
  */
-angular.module('instaApp')
-  .factory('InstagramAPI', function ($http) {
-    // Service logic
-    // ...
 
-    var clientId = '451cf9fc4a0a44379d699e4ca48d58fb';
-
-    // Public API here
-    return {
-      fetchPopular: function(callback){
+angular
+  .module('instaApp')
+  .factory('InstagramService', function ($http, CLIENT_ID) {
+    
+    var InstagramService = {};
+  
+    InstagramService.getPopular = function(callback) {
+      
         var endpoint = 'https://api.instagram.com/v1/media/popular';
-        endpoint += '?count=99';
-        endpoint += '&client_id=' + clientId;
-        endpoint += '&callback=JSON_CALLBACK';
+          endpoint += '?count=99';
+          endpoint += '&client_id=' + CLIENT_ID;
+          endpoint += '&callback=JSON_CALLBACK';
+          
         $http.jsonp(endpoint).success(function(response){
-          callback(response.data);
+            callback(response.data);
         });
-      }
+        
     };
+    
+    return InstagramService;
+    
   });

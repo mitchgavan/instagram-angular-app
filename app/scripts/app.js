@@ -17,6 +17,7 @@ angular
     'ngSanitize',
     'ngTouch'
   ])
+  .constant('CLIENT_ID', '451cf9fc4a0a44379d699e4ca48d58fb')
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {

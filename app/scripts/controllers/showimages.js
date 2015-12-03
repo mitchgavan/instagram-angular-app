@@ -8,10 +8,10 @@
  * Controller of the instaApp
  */
 angular.module('instaApp')
-  .controller('ShowImagesCtrl', function ($scope, InstagramAPI) {
+  .controller('ShowImagesCtrl', function ($scope, InstagramService) {
     $scope.data = {};
     $scope.dataLoaded = false;
-    InstagramAPI.fetchPopular(function(data){
+    InstagramService.getPopular(function(data){
       $scope.pics = data;
       $scope.dataLoaded = true;
     });
