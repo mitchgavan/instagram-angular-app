@@ -17,7 +17,7 @@ angular
     InstagramModel.getPopular = function(callback) {
           
         var endpoint = [
-          'https://api.instagram.com/v1/media/popular?count=50&client_id=', 
+          'https://api.instagram.com/v1/media/popular?client_id=', 
           CLIENT_ID, 
           '&callback=JSON_CALLBACK'
         ].join('');

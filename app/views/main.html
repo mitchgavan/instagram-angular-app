@@ -1,12 +1,8 @@
 
-
-<div class="row">
-  <section ng-controller="MediaCtrl as images">
-
-    <div ng-hide="dataLoaded" class="loader animate">Loading...</div>
-
-    <div class="col-lg-4 animate" ng-repeat="p in pics">
-      
+<section ng-controller="MediaCtrl as vm">
+  <div class="row">
+    <div ng-hide="vm.dataLoaded" class="loader animate">Loading...</div>
+    <div class="col-lg-4 animate" ng-repeat="p in vm.pics">
       <a href="{{p.link}}" target="_blank">
         <img ng-src="{{p.images.low_resolution.url}}" class="img-responsive">
       </a>
@@ -16,8 +12,15 @@
       <p>
         {{p.likes.count}}
       </p>
-
     </div>
-
-  </section>
-</div>
+  </div>
+  <div class="row">
+    <div class="col-lg-6">
+      <h4>Currently displaying {{vm.pics.length}} pictures on page</h4>
+    </div>
+    <div class="col-lg-6">
+      <button type="button" class="btn btn-success" ng-click="vm.getMore()">Show me more</button>
+    </div>
+  </div>
+  
+</section>
