@@ -1,22 +1,22 @@
 'use strict';
 
-describe('Controller: ShowimagesCtrl', function () {
+describe('Controller: MediaCtrl', function () {
 
   // load the controller's module
   beforeEach(module('instaApp'));
 
-  var ShowimagesCtrl,
+  var MediaCtrl,
     scope;
 
   // Initialize the controller and a mock scope
   beforeEach(inject(function ($controller, $rootScope) {
     scope = $rootScope.$new();
-    ShowimagesCtrl = $controller('ShowimagesCtrl', {
+    MediaCtrl = $controller('MediaCtrl', {
       $scope: scope
     });
   }));
 
-  it('should attach a list of awesomeThings to the scope', function () {
-    expect(scope.awesomeThings.length).toBe(3);
+  it('should attach some data to the scope', function () {
+    expect(scope.dataLoaded).toBe(false);
   });
 });

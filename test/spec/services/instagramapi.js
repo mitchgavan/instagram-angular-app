@@ -1,18 +1,18 @@
 'use strict';
 
-describe('Service: instagramAPI', function () {
+describe('Service: InstagramModel', function () {
 
   // load the service's module
   beforeEach(module('instaApp'));
 
   // instantiate service
-  var instagramAPI;
-  beforeEach(inject(function (_instagramAPI_) {
-    instagramAPI = _instagramAPI_;
+  var InstagramModel;
+  beforeEach(inject(function (_InstagramModel_) {
+    InstagramModel = _InstagramModel_;
   }));
 
   it('should do something', function () {
-    expect(!!instagramAPI).toBe(true);
+    expect(!!InstagramModel).toBe(true);
   });
 
 });

@@ -2,16 +2,16 @@
 
 /**
  * @ngdoc function
- * @name instaApp.controller:ShowimagesCtrl
+ * @name instaApp.controller:MediaCtrl
  * @description
- * # ShowimagesCtrl
+ * # MediaCtrl
  * Controller of the instaApp
  */
 angular.module('instaApp')
-  .controller('ShowImagesCtrl', function ($scope, InstagramService) {
+  .controller('MediaCtrl', function ($scope, InstagramModel) {
     $scope.data = {};
     $scope.dataLoaded = false;
-    InstagramService.getPopular(function(data){
+    InstagramModel.getPopular(function(data){
       $scope.pics = data;
       $scope.dataLoaded = true;
     });
